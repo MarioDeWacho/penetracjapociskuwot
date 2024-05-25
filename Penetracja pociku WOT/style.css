@@ -1,0 +1,284 @@
+.modal-transparent {
+    background-color: rgba(255, 255, 255, 0.80); /* Kolor tła z lekką przezroczystością */
+}
+
+body {
+    background-image: url('images/tlo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Pozycjonowanie tła na środku */
+}
+.penetration-result {
+    z-index: 1; /* Zapewnia, że wynik będzie wyświetlany nad wykresem */
+    color: #254708; /* Kolor tekstu */
+    font-size: 50px; /* Rozmiar czcionki */
+    font-family: Arial; /* Rodzina czcionek */
+    font-style: normal; /* Styl czcionki */
+    font-weight: normal; /* Pogrubienie czcionki */
+    -webkit-text-stroke-width: 0px; /* Grubość obrysu tekstu */
+    -webkit-text-stroke-color: #ffffff; /* Kolor obrysu tekstu */
+    /*text-decoration: underline; /* Dekoracja tekstu */
+}
+.guzik-ognia {
+    width: 230px; /* Określenie szerokości guzika */
+    height:230px; /* Określenie wysokości guzika */
+    background-color: transparent; /* Usunięcie koloru tła */
+    background-image: url('images/czerwony_guzik_2.png'); /* Dodanie obrazka jako tła */
+    background-size: cover; /* Dopasowanie obrazka do wielkości przycisku */
+    opacity: 0.1; /* Ukryj guzik na początku */
+    filter: brightness(0,01); /*poziom nasycenia kolorów przed aktywacją */
+    transition: opacity 1s ease; /* Dodaj płynne przejście dla właściwości opacity */
+    font-size: var(--font-size, 35px); /* Domyślna wielkość czcionki */
+    --bs-btn-font-weight: 600; /* Grubość czcionki */
+    --bs-btn-color: var(--bs-black); /* Kolor czcionki */
+    --bs-btn-bg: var(--bd-violet-bg); /* Kolor tła */
+    --bs-btn-border-color: var(--bd-violet-bg); /* Kolor obramowania */
+    --bs-btn-hover-color: var(--bs-black); /* Kolor czcionki po najechaniu myszą */
+    --bs-btn-hover-bg: #a7499400; /* Kolor tła po najechaniu myszą */
+    --bs-btn-hover-border-color: #a7499400; /* Kolor obramowania po najechaniu myszą */
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Kolor cienia po uzyskaniu focusu */
+    --bs-btn-active-color: var(--bs-btn-hover-color); /* Kolor czcionki po aktywowaniu guzika */
+    --bs-btn-active-bg: #88487f00; /* Kolor tła po aktywowaniu guzika */
+    --bs-btn-active-border-color: #88487f00; /* Kolor obramowania po aktywowaniu guzika */
+}
+
+.guzik-ognia.show {
+    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
+    filter: brightness(1); /* Zwiększenie nasycenia koloru */
+}
+
+.guzik-laduj {
+    width: 230px; /* Określenie szerokości guzika */
+    height:230px; /* Określenie wysokości guzika */
+    background-color: transparent; /* Usunięcie koloru tła */
+    background-image: url('images/laduj.png'); /* Dodanie obrazka jako tła */
+    background-size: cover; /* Dopasowanie obrazka do wielkości przycisku */
+    opacity: 0.1; /* Ukryj guzik na początku */
+    filter: brightness(0,01); /*poziom nasycenia kolorów przed aktywacją */
+    transition: opacity 1s ease; /* Dodaj płynne przejście dla właściwości opacity */
+    font-size: var(--font-size, 20px); /* Domyślna wielkość czcionki */
+    --bs-btn-font-weight: 600; /* Grubość czcionki */
+    --bs-btn-color: var(--bs-black); /* Kolor czcionki */
+    --bs-btn-bg: var(--bd-violet-bg); /* Kolor tła */
+    --bs-btn-border-color: var(--bd-violet-bg); /* Kolor obramowania */
+    --bs-btn-hover-color: var(--bs-black); /* Kolor czcionki po najechaniu myszą */
+    --bs-btn-hover-bg: #a7499400; /* Kolor tła po najechaniu myszą */
+    --bs-btn-hover-border-color: #a7499400; /* Kolor obramowania po najechaniu myszą */
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Kolor cienia po uzyskaniu focusu */
+    --bs-btn-active-color: var(--bs-btn-hover-color); /* Kolor czcionki po aktywowaniu guzika */
+    --bs-btn-active-bg: #88487f00; /* Kolor tła po aktywowaniu guzika */
+    --bs-btn-active-border-color: #88487f00; /* Kolor obramowania po aktywowaniu guzika */
+}
+
+.guzik-laduj.show {
+    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
+    filter: brightness(1); /* Zwiększenie nasycenia koloru */
+    cursor: pointer;
+}
+
+.guzik-laduj:hover {
+    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
+    filter: brightness(1); /* Zwiększenie nasycenia koloru */
+    cursor: pointer;
+    transform: scale(1.1); /* Zwiększenie o 10% */
+    transition: transform 0.5s ease;
+}
+
+.pre-line {
+    white-space: pre-line;
+}
+
+#historyList {
+    text-align: left;
+}
+.accordion-body {
+    text-align: left;
+}
+.navbar {
+    box-shadow: 0 5px 15px rgb(0, 0, 0); /* Dodaje cień pod navbar górny */
+}
+.navbar-bottom {
+    box-shadow: 0 -5px 15px rgb(0, 0, 0); /* Dodaje cień pod navbar dolny */
+}
+
+.offcanvas {
+    box-shadow: -5 0px 15px rgb(0, 0, 0); /* Dodaje cień pod offcanvas prawy*/
+}
+
+.offcanvas-top{
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/*.btn {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.308);
+}*/
+.col {
+    position: relative;
+}
+
+.col:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #00000023; 
+}
+
+/* Zmiana kursora na pointer dla obrazka służącego jako przycisk */
+.button-image:hover {
+    cursor: pointer;
+}
+
+.button-icon:hover {
+    cursor: pointer;
+}
+
+/* Styl dla obrazka animowanego */
+.button-image {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0000004d; /* Ramka na stałe */
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5); /* Domyślny cień */
+    transition: border-color 0.5 ease; /* Efekt przejścia dla zmiany koloru ramki */
+    transition: transform 0.5s ease;
+    transition: box-shadow 1 ease;
+    transition: border-color 1 ease;
+}
+
+.button-image:hover {
+    border-color: #181b04; /* Możesz zmienić kolor ramki według własnych preferencji */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Cień z czarnym kolorem */
+    transform: scale(1.1); /* Zwiększenie o 10% */
+}
+
+/* Styl dla obrazka statycznego */
+.button-image-static {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5); /* Domyślny cień */
+}
+
+/* Styl dla obrazka statycznego(pocisk) */
+.button-image-static-pocisk {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.308); /* Domyślny cień */
+    cursor: pointer;
+}
+
+.button-image-static-pocisk:hover {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 2px solid #0000004d;
+    box-shadow: 0px 0px 5px #134400; /* Domyślny cień */
+    cursor: pointer;
+}
+
+.button-image-static-pocisk.selected {
+    background-color: #134400;
+    box-shadow: 0px 0px 15px hwb(0 0% 100% / 0.774);
+}
+
+.button-icon {
+    width: 100%;
+    height: 100%;
+    background-color: #00000000;
+    transition: border-color 0.5 ease; /* Efekt przejścia dla zmiany koloru ramki */
+    transition: transform 0.5s ease;
+    transition: box-shadow 1 ease;
+    transition: border-color 1 ease;
+}
+
+.button-icon:hover {
+    transform: scale(1.1); /* Zwiększenie o 10% */
+}
+
+.btn-primary-wybieram {
+    background-color: #000000;
+    border: 1px solid #0000004d; 
+    color: #ffffff;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+.btn-primary-wybieram:hover {
+    background-color: #00aeff;
+    color: #000000;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+/* Gradient radialny z obrysem dla końcówek suwaka dla przeglądarek obsługujących pseudo-elementy ::-webkit-slider-thumb i ::-moz-range-thumb */
+input[type="range"]::-webkit-slider-thumb {
+    background: radial-gradient(circle, #275300, #ffffff); /* Gradient radialny dla Chrome i Safari */
+    border: 4px solid #134400; /* Obrys dla Chrome i Safari */
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: radial-gradient(circle, #275300, #ffffff); /* Gradient radialny dla Firefox */
+    border: 4px solid #134400; /* Obrys dla Firefox */
+}
+
+.offcanvas.offcanvas-top {
+    height: 70vh; /* Dostosowuje wysokość offcanvas do 90% wysokości ekranu */
+}
+
+.object-fit-sm-contain {
+    object-fit: cover;
+}
+/* Stylizacja kontenera tostera */
+#toastContainer {
+    z-index: 5;
+}
+
+/* Stylizacja samego tostera PENETRACJI */
+#selectedPenetrationToast {
+    width: 500px; /* Szerokość tostera */
+    height: auto; /* Automatyczna wysokość, można dostosować */
+    background-size: cover; /* Dopasowanie obrazka do rozmiaru tostera */
+    background-position: center; /* Wyśrodkowanie obrazka */
+    color: white; /* Kolor tekstu */
+    background-color: #134400;
+    border: none; /* Brak obramowania */
+    border-radius: 0.25rem; /* Zaokrąglone rogi */
+}
+
+/* Stylizacja ciała tostera PENETRACJI */
+#selectedPenetrationToast .toast-body {
+    padding: 1rem;
+}
+
+/* Stylizacja przycisku zamykającego PENETRACJI */
+#selectedPenetrationToast .btn-close {
+    filter: brightness(0) invert(1); /* Zmiana koloru na biały */
+}
+
+
+/* Stylizacja wszystkich tosterów WYBORU PANCERZA */
+.toast {
+    width: 500px; /* Szerokość tostera */
+    height: auto; /* Automatyczna wysokość, można dostosować */
+    background-size: cover; /* Dopasowanie obrazka do rozmiaru tostera */
+    background-position: center; /* Wyśrodkowanie obrazka */
+    color: #ffffff; /* Kolor tekstu */
+    background-color: #000000;
+    border: none; /* Brak obramowania */
+    border-radius: 0.25rem; /* Zaokrąglone rogi */
+}
+
+/* Stylizacja ciała wszystkich tosterów */
+.toast .toast-body {
+    padding: 1rem;
+}
+
+/* Stylizacja przycisku zamykającego wszystkie tostery */
+.toast .btn-close {
+    filter: brightness(0) invert(1); /* Zmiana koloru na biały */
+}
+
