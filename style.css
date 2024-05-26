@@ -1,0 +1,395 @@
+/* Tło dla modala z lekką przezroczystością */
+.modal-transparent {
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+/* Tło dla całego dokumentu */
+body {
+    background-image: url('images/tlo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Styl dla wyniku penetracji */
+.penetration-result {
+    z-index: 1;
+    color: #254708;
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: #ffffff;
+}
+
+/* Styl dla guzika "OGNIA" */
+.guzik-ognia {
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    background-image: url('images/czerwony_guzik_2.png');
+    background-size: cover;
+    opacity: 0.1;
+    filter: brightness(0.5);
+    transition: opacity 1s ease, filter 1s ease;
+    font-size: var(--font-size, 35px);
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: #a7499400;
+    --bs-btn-hover-border-color: #a7499400;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #88487f00;
+    --bs-btn-active-border-color: #88487f00;
+}
+
+/* Styl dla aktywnego guzika "OGNIA" */
+.guzik-ognia.show {
+    opacity: 1;
+    filter: brightness(1);
+}
+
+/* Styl dla guzika "ŁADUJ" */
+.guzik-laduj {
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    background-image: url('images/laduj.png');
+    background-size: cover;
+    opacity: 0.1;
+    filter: brightness(0.01);
+    transition: opacity 1s ease, filter 1s ease;
+    font-size: var(--font-size, 20px);
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: #a7499400;
+    --bs-btn-hover-border-color: #a7499400;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #88487f00;
+    --bs-btn-active-border-color: #88487f00;
+}
+
+/* Styl dla aktywnego guzika "ŁADUJ" */
+.guzik-laduj.show, .guzik-laduj:hover {
+    opacity: 1;
+    filter: brightness(1);
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+/* Preformatowanie białych znaków */
+.pre-line {
+    white-space: pre-line;
+}
+
+/* Styl dla listy historii */
+#historyList {
+    text-align: left;
+}
+
+
+/* Styl dla górnego paska nawigacyjnego */
+.navbar {
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla dolnego paska nawigacyjnego */
+.navbar-bottom {
+    box-shadow: 0 -5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla elementu offcanvas */
+.offcanvas {
+    box-shadow: -5 0px 15px rgb(0, 0, 0);
+}
+
+.offcanvas.offcanvas-top {
+    height: 70vh;
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla kolumn */
+.col {
+    position: relative;
+}
+
+.col:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #00000023;
+}
+
+/* Zmiana kursora na pointer dla obrazka służącego jako przycisk */
+.button-image:hover, .button-icon:hover {
+    cursor: pointer;
+}
+
+/* Styl dla obrazka animowanego */
+.button-image {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
+}
+
+.button-image:hover {
+    border-color: #181b04;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Styl dla obrazka statycznego */
+.button-image-static {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+/* Styl dla obrazka statycznego (pocisk) */
+.button-image-static-pocisk {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.308);
+    cursor: pointer;
+}
+
+.button-image-static-pocisk:hover {
+    border: 2px solid #0000004d;
+    box-shadow: 0px 0px 5px #134400;
+}
+
+.button-image-static-pocisk.selected {
+    background-color: #134400;
+    box-shadow: 0px 0px 15px hwb(0 0% 100% / 0.774);
+}
+
+/* Styl dla ikony przycisku */
+.button-icon {
+    width: 100%;
+    height: 100%;
+    background-color: #00000000;
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
+}
+
+.button-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Styl dla przycisku "WYBIERAM" */
+.btn-primary-wybieram {
+    background-color: #000000;
+    border: 1px solid #0000004d;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+.btn-primary-wybieram:hover {
+    background-color: #00aeff;
+    color: #000000;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+:root {
+    --range-focus-background-color: #c0c0c0; /* Srebrny kolor tła dla focus */
+}
+
+/* Stylizacja końcówek suwaka dla przeglądarek obsługujących pseudo-elementy */
+    input[type="range"] {
+    width: 100%; /* Pełna szerokość */
+    margin: 10px 0; /* Margines */
+}
+
+input[type="range"]:focus {
+    outline: none; /* Usunięcie obramowania po uzyskaniu focus */
+}
+
+/* Stylizacja suwaka dla WebKit (Chrome, Safari) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    margin-top: -5px; /* Dostosowanie marginesu */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+}
+
+/* Stylizacja suwaka dla Gecko (Firefox) */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-moz-range-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+}
+
+/* Stylizacja suwaka dla MS Edge */
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-ms-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-thumb {
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+    margin-top: 0;
+}
+
+/* Stylizacja podświetlenia dla inputów */
+.highlight {
+    background-color: #e4e4e4; /* Jasny kolor tła */
+    border: 1px solid #000000; /* Jasnożółta ramka */
+    transition: background-color 0.5s ease, border 0.5s ease; /* Płynne przejście */
+}
+
+/* Dodanie przejścia do elementów input */
+input[type="range"], input[type="number"] {
+    transition: background-color 0.5s ease, border 0.5s ease;
+}
+
+
+/* Styl dla kontenera tostera */
+#toastContainer {
+    z-index: 5;
+}
+
+/* Styl dla wszystkich tosterów WYBORU PANCERZA */
+.toast {
+    width: 500px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.toast .toast-body {
+    padding: 1rem;
+}
+
+.toast .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+/* Styl dla obrazka z dopasowaniem do kontenera */
+.object-fit-sm-contain {
+    object-fit: cover;
+}
+
+/* Definiuje obszar pola bitwy */
+#battlefield {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    /*background-color: #f0f0f08c;
+    border: 1px solid #ccc;*/
+}
+
+/* Klasa definiująca wygląd i rozmiar czołgów */
+.tank {
+    position: absolute;
+    width: 50px;
+    height: 150px;
+}
+
+/* Styl dla czołgu stojącego na środku pola bitwy */
+#target-tank {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styl dla linii reprezentującej trajektorię strzału */
+#shot-path {
+    position: absolute;
+    border-top: 1px dashed red;
+    height: 0;
+    transform-origin: 0 50%;
+}
+
+
+
+
+
+
