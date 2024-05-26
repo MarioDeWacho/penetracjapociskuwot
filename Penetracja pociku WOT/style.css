@@ -1,117 +1,123 @@
+/* Tło dla modala z lekką przezroczystością */
 .modal-transparent {
-    background-color: rgba(255, 255, 255, 0.80); /* Kolor tła z lekką przezroczystością */
+    background-color: rgba(255, 255, 255, 0.80);
 }
 
+/* Tło dla całego dokumentu */
 body {
     background-image: url('images/tlo.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; /* Pozycjonowanie tła na środku */
+    background-position: center;
 }
+
+/* Styl dla wyniku penetracji */
 .penetration-result {
-    z-index: 1; /* Zapewnia, że wynik będzie wyświetlany nad wykresem */
-    color: #254708; /* Kolor tekstu */
-    font-size: 50px; /* Rozmiar czcionki */
-    font-family: Arial; /* Rodzina czcionek */
-    font-style: normal; /* Styl czcionki */
-    font-weight: normal; /* Pogrubienie czcionki */
-    -webkit-text-stroke-width: 0px; /* Grubość obrysu tekstu */
-    -webkit-text-stroke-color: #ffffff; /* Kolor obrysu tekstu */
-    /*text-decoration: underline; /* Dekoracja tekstu */
+    z-index: 1;
+    color: #254708;
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: #ffffff;
 }
+
+/* Styl dla guzika "OGNIA" */
 .guzik-ognia {
-    width: 230px; /* Określenie szerokości guzika */
-    height:230px; /* Określenie wysokości guzika */
-    background-color: transparent; /* Usunięcie koloru tła */
-    background-image: url('images/czerwony_guzik_2.png'); /* Dodanie obrazka jako tła */
-    background-size: cover; /* Dopasowanie obrazka do wielkości przycisku */
-    opacity: 0.1; /* Ukryj guzik na początku */
-    filter: brightness(0,01); /*poziom nasycenia kolorów przed aktywacją */
-    transition: opacity 1s ease; /* Dodaj płynne przejście dla właściwości opacity */
-    font-size: var(--font-size, 35px); /* Domyślna wielkość czcionki */
-    --bs-btn-font-weight: 600; /* Grubość czcionki */
-    --bs-btn-color: var(--bs-black); /* Kolor czcionki */
-    --bs-btn-bg: var(--bd-violet-bg); /* Kolor tła */
-    --bs-btn-border-color: var(--bd-violet-bg); /* Kolor obramowania */
-    --bs-btn-hover-color: var(--bs-black); /* Kolor czcionki po najechaniu myszą */
-    --bs-btn-hover-bg: #a7499400; /* Kolor tła po najechaniu myszą */
-    --bs-btn-hover-border-color: #a7499400; /* Kolor obramowania po najechaniu myszą */
-    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Kolor cienia po uzyskaniu focusu */
-    --bs-btn-active-color: var(--bs-btn-hover-color); /* Kolor czcionki po aktywowaniu guzika */
-    --bs-btn-active-bg: #88487f00; /* Kolor tła po aktywowaniu guzika */
-    --bs-btn-active-border-color: #88487f00; /* Kolor obramowania po aktywowaniu guzika */
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    background-image: url('images/czerwony_guzik_2.png');
+    background-size: cover;
+    opacity: 0.1;
+    filter: brightness(0.5);
+    transition: opacity 1s ease, filter 1s ease;
+    font-size: var(--font-size, 35px);
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: #a7499400;
+    --bs-btn-hover-border-color: #a7499400;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #88487f00;
+    --bs-btn-active-border-color: #88487f00;
 }
 
+/* Styl dla aktywnego guzika "OGNIA" */
 .guzik-ognia.show {
-    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
-    filter: brightness(1); /* Zwiększenie nasycenia koloru */
+    opacity: 1;
+    filter: brightness(1);
 }
 
+/* Styl dla guzika "ŁADUJ" */
 .guzik-laduj {
-    width: 230px; /* Określenie szerokości guzika */
-    height:230px; /* Określenie wysokości guzika */
-    background-color: transparent; /* Usunięcie koloru tła */
-    background-image: url('images/laduj.png'); /* Dodanie obrazka jako tła */
-    background-size: cover; /* Dopasowanie obrazka do wielkości przycisku */
-    opacity: 0.1; /* Ukryj guzik na początku */
-    filter: brightness(0,01); /*poziom nasycenia kolorów przed aktywacją */
-    transition: opacity 1s ease; /* Dodaj płynne przejście dla właściwości opacity */
-    font-size: var(--font-size, 20px); /* Domyślna wielkość czcionki */
-    --bs-btn-font-weight: 600; /* Grubość czcionki */
-    --bs-btn-color: var(--bs-black); /* Kolor czcionki */
-    --bs-btn-bg: var(--bd-violet-bg); /* Kolor tła */
-    --bs-btn-border-color: var(--bd-violet-bg); /* Kolor obramowania */
-    --bs-btn-hover-color: var(--bs-black); /* Kolor czcionki po najechaniu myszą */
-    --bs-btn-hover-bg: #a7499400; /* Kolor tła po najechaniu myszą */
-    --bs-btn-hover-border-color: #a7499400; /* Kolor obramowania po najechaniu myszą */
-    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Kolor cienia po uzyskaniu focusu */
-    --bs-btn-active-color: var(--bs-btn-hover-color); /* Kolor czcionki po aktywowaniu guzika */
-    --bs-btn-active-bg: #88487f00; /* Kolor tła po aktywowaniu guzika */
-    --bs-btn-active-border-color: #88487f00; /* Kolor obramowania po aktywowaniu guzika */
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    background-image: url('images/laduj.png');
+    background-size: cover;
+    opacity: 0.1;
+    filter: brightness(0.01);
+    transition: opacity 1s ease, filter 1s ease;
+    font-size: var(--font-size, 20px);
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: #a7499400;
+    --bs-btn-hover-border-color: #a7499400;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #88487f00;
+    --bs-btn-active-border-color: #88487f00;
 }
 
-.guzik-laduj.show {
-    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
-    filter: brightness(1); /* Zwiększenie nasycenia koloru */
+/* Styl dla aktywnego guzika "ŁADUJ" */
+.guzik-laduj.show, .guzik-laduj:hover {
+    opacity: 1;
+    filter: brightness(1);
     cursor: pointer;
-}
-
-.guzik-laduj:hover {
-    opacity: 1; /* Pokaż guzik, gdy ma klasę show */
-    filter: brightness(1); /* Zwiększenie nasycenia koloru */
-    cursor: pointer;
-    transform: scale(1.1); /* Zwiększenie o 10% */
+    transform: scale(1.1);
     transition: transform 0.5s ease;
 }
 
+/* Preformatowanie białych znaków */
 .pre-line {
     white-space: pre-line;
 }
 
+/* Styl dla listy historii */
 #historyList {
     text-align: left;
 }
-.accordion-body {
-    text-align: left;
-}
+
+
+/* Styl dla górnego paska nawigacyjnego */
 .navbar {
-    box-shadow: 0 5px 15px rgb(0, 0, 0); /* Dodaje cień pod navbar górny */
-}
-.navbar-bottom {
-    box-shadow: 0 -5px 15px rgb(0, 0, 0); /* Dodaje cień pod navbar dolny */
-}
-
-.offcanvas {
-    box-shadow: -5 0px 15px rgb(0, 0, 0); /* Dodaje cień pod offcanvas prawy*/
-}
-
-.offcanvas-top{
     box-shadow: 0 5px 15px rgb(0, 0, 0);
 }
 
-/*.btn {
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.308);
-}*/
+/* Styl dla dolnego paska nawigacyjnego */
+.navbar-bottom {
+    box-shadow: 0 -5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla elementu offcanvas */
+.offcanvas {
+    box-shadow: -5 0px 15px rgb(0, 0, 0);
+}
+
+.offcanvas.offcanvas-top {
+    height: 70vh;
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla kolumn */
 .col {
     position: relative;
 }
@@ -123,15 +129,11 @@ body {
     right: 0;
     height: 100%;
     width: 1px;
-    background-color: #00000023; 
+    background-color: #00000023;
 }
 
 /* Zmiana kursora na pointer dla obrazka służącego jako przycisk */
-.button-image:hover {
-    cursor: pointer;
-}
-
-.button-icon:hover {
+.button-image:hover, .button-icon:hover {
     cursor: pointer;
 }
 
@@ -139,18 +141,15 @@ body {
 .button-image {
     width: 100%;
     height: 100%;
-    border: 1px solid #0000004d; /* Ramka na stałe */
-    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5); /* Domyślny cień */
-    transition: border-color 0.5 ease; /* Efekt przejścia dla zmiany koloru ramki */
-    transition: transform 0.5s ease;
-    transition: box-shadow 1 ease;
-    transition: border-color 1 ease;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
 }
 
 .button-image:hover {
-    border-color: #181b04; /* Możesz zmienić kolor ramki według własnych preferencji */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Cień z czarnym kolorem */
-    transform: scale(1.1); /* Zwiększenie o 10% */
+    border-color: #181b04;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 /* Styl dla obrazka statycznego */
@@ -159,26 +158,22 @@ body {
     height: 100%;
     background-color: #000000;
     border: 1px solid #0000004d;
-    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5); /* Domyślny cień */
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
 }
 
-/* Styl dla obrazka statycznego(pocisk) */
+/* Styl dla obrazka statycznego (pocisk) */
 .button-image-static-pocisk {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
     border: 1px solid #000000;
-    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.308); /* Domyślny cień */
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.308);
     cursor: pointer;
 }
 
 .button-image-static-pocisk:hover {
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
     border: 2px solid #0000004d;
-    box-shadow: 0px 0px 5px #134400; /* Domyślny cień */
-    cursor: pointer;
+    box-shadow: 0px 0px 5px #134400;
 }
 
 .button-image-static-pocisk.selected {
@@ -186,23 +181,22 @@ body {
     box-shadow: 0px 0px 15px hwb(0 0% 100% / 0.774);
 }
 
+/* Styl dla ikony przycisku */
 .button-icon {
     width: 100%;
     height: 100%;
     background-color: #00000000;
-    transition: border-color 0.5 ease; /* Efekt przejścia dla zmiany koloru ramki */
-    transition: transform 0.5s ease;
-    transition: box-shadow 1 ease;
-    transition: border-color 1 ease;
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
 }
 
 .button-icon:hover {
-    transform: scale(1.1); /* Zwiększenie o 10% */
+    transform: scale(1.1);
 }
 
+/* Styl dla przycisku "WYBIERAM" */
 .btn-primary-wybieram {
     background-color: #000000;
-    border: 1px solid #0000004d; 
+    border: 1px solid #0000004d;
     color: #ffffff;
     box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
 }
@@ -214,71 +208,188 @@ body {
     box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
 }
 
-/* Gradient radialny z obrysem dla końcówek suwaka dla przeglądarek obsługujących pseudo-elementy ::-webkit-slider-thumb i ::-moz-range-thumb */
+:root {
+    --range-focus-background-color: #c0c0c0; /* Srebrny kolor tła dla focus */
+}
+
+/* Stylizacja końcówek suwaka dla przeglądarek obsługujących pseudo-elementy */
+    input[type="range"] {
+    width: 100%; /* Pełna szerokość */
+    margin: 10px 0; /* Margines */
+}
+
+input[type="range"]:focus {
+    outline: none; /* Usunięcie obramowania po uzyskaniu focus */
+}
+
+/* Stylizacja suwaka dla WebKit (Chrome, Safari) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
 input[type="range"]::-webkit-slider-thumb {
-    background: radial-gradient(circle, #275300, #ffffff); /* Gradient radialny dla Chrome i Safari */
-    border: 4px solid #134400; /* Obrys dla Chrome i Safari */
+    -webkit-appearance: none;
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    margin-top: -5px; /* Dostosowanie marginesu */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+}
+
+/* Stylizacja suwaka dla Gecko (Firefox) */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-moz-range-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
 }
 
 input[type="range"]::-moz-range-thumb {
-    background: radial-gradient(circle, #275300, #ffffff); /* Gradient radialny dla Firefox */
-    border: 4px solid #134400; /* Obrys dla Firefox */
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
 }
 
-.offcanvas.offcanvas-top {
-    height: 70vh; /* Dostosowuje wysokość offcanvas do 90% wysokości ekranu */
+/* Stylizacja suwaka dla MS Edge */
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
 }
 
-.object-fit-sm-contain {
-    object-fit: cover;
+input[type="range"]:focus::-ms-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
 }
-/* Stylizacja kontenera tostera */
+
+input[type="range"]::-ms-fill-lower {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-thumb {
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+    margin-top: 0;
+}
+
+/* Stylizacja podświetlenia dla inputów */
+.highlight {
+    background-color: #e4e4e4; /* Jasny kolor tła */
+    border: 1px solid #000000; /* Jasnożółta ramka */
+    transition: background-color 0.5s ease, border 0.5s ease; /* Płynne przejście */
+}
+
+/* Dodanie przejścia do elementów input */
+input[type="range"], input[type="number"] {
+    transition: background-color 0.5s ease, border 0.5s ease;
+}
+
+
+/* Styl dla kontenera tostera */
 #toastContainer {
     z-index: 5;
 }
 
-/* Stylizacja samego tostera PENETRACJI */
-#selectedPenetrationToast {
-    width: 500px; /* Szerokość tostera */
-    height: auto; /* Automatyczna wysokość, można dostosować */
-    background-size: cover; /* Dopasowanie obrazka do rozmiaru tostera */
-    background-position: center; /* Wyśrodkowanie obrazka */
-    color: white; /* Kolor tekstu */
-    background-color: #134400;
-    border: none; /* Brak obramowania */
-    border-radius: 0.25rem; /* Zaokrąglone rogi */
-}
-
-/* Stylizacja ciała tostera PENETRACJI */
-#selectedPenetrationToast .toast-body {
-    padding: 1rem;
-}
-
-/* Stylizacja przycisku zamykającego PENETRACJI */
-#selectedPenetrationToast .btn-close {
-    filter: brightness(0) invert(1); /* Zmiana koloru na biały */
-}
-
-
-/* Stylizacja wszystkich tosterów WYBORU PANCERZA */
+/* Styl dla wszystkich tosterów WYBORU PANCERZA */
 .toast {
-    width: 500px; /* Szerokość tostera */
-    height: auto; /* Automatyczna wysokość, można dostosować */
-    background-size: cover; /* Dopasowanie obrazka do rozmiaru tostera */
-    background-position: center; /* Wyśrodkowanie obrazka */
-    color: #ffffff; /* Kolor tekstu */
+    width: 500px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
     background-color: #000000;
-    border: none; /* Brak obramowania */
-    border-radius: 0.25rem; /* Zaokrąglone rogi */
+    border: none;
+    border-radius: 0.25rem;
 }
 
-/* Stylizacja ciała wszystkich tosterów */
 .toast .toast-body {
     padding: 1rem;
 }
 
-/* Stylizacja przycisku zamykającego wszystkie tostery */
 .toast .btn-close {
-    filter: brightness(0) invert(1); /* Zmiana koloru na biały */
+    filter: brightness(0) invert(1);
 }
+
+/* Styl dla obrazka z dopasowaniem do kontenera */
+.object-fit-sm-contain {
+    object-fit: cover;
+}
+
+/* Definiuje obszar pola bitwy */
+#battlefield {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    /*background-color: #f0f0f08c;
+    border: 1px solid #ccc;*/
+}
+
+/* Klasa definiująca wygląd i rozmiar czołgów */
+.tank {
+    position: absolute;
+    width: 50px;
+    height: 150px;
+}
+
+/* Styl dla czołgu stojącego na środku pola bitwy */
+#target-tank {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styl dla linii reprezentującej trajektorię strzału */
+#shot-path {
+    position: absolute;
+    border-top: 1px dashed red;
+    height: 0;
+    transform-origin: 0 50%;
+}
+
+
+
+
+
 
