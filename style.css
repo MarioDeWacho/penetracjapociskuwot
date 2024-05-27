@@ -9,6 +9,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    font-size: 16px;
 }
 
 /* Styl dla wyniku penetracji */
@@ -95,7 +97,6 @@ body {
 #historyList {
     text-align: left;
 }
-
 
 /* Styl dla górnego paska nawigacyjnego */
 .navbar {
@@ -213,7 +214,7 @@ body {
 }
 
 /* Stylizacja końcówek suwaka dla przeglądarek obsługujących pseudo-elementy */
-    input[type="range"] {
+input[type="range"] {
     width: 100%; /* Pełna szerokość */
     margin: 10px 0; /* Margines */
 }
@@ -325,7 +326,6 @@ input[type="range"], input[type="number"] {
     transition: background-color 0.5s ease, border 0.5s ease;
 }
 
-
 /* Styl dla kontenera tostera */
 #toastContainer {
     z-index: 5;
@@ -388,8 +388,68 @@ input[type="range"], input[type="number"] {
     transform-origin: 0 50%;
 }
 
+/* Małe urządzenia (telefony) */
+@media (max-width: 600px) {
+    .penetration-result {
+        font-size: 24px;
+    }
 
+    .guzik-ognia, .guzik-laduj {
+        width: 100px;
+        height: 100px;
+    }
 
+    #battlefield {
+        width: 100%;
+        height: auto;
+    }
 
+    .tank {
+        width: 25px;
+        height: 75px;
+    }
+}
 
+/* Średnie urządzenia (tablety) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .penetration-result {
+        font-size: 36px;
+    }
 
+    .guzik-ognia, .guzik-laduj {
+        width: 150px;
+        height: 150px;
+    }
+
+    #battlefield {
+        width: 100%;
+        height: auto;
+    }
+
+    .tank {
+        width: 40px;
+        height: 120px;
+    }
+}
+
+/* Duże urządzenia (desktopy) */
+@media (min-width: 1025px) {
+    .penetration-result {
+        font-size: 50px;
+    }
+
+    .guzik-ognia, .guzik-laduj {
+        width: 230px;
+        height: 230px;
+    }
+
+    #battlefield {
+        width: 550px;
+        height: 500px;
+    }
+
+    .tank {
+        width: 50px;
+        height: 150px;
+    }
+}
