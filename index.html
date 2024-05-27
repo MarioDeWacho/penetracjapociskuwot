@@ -64,9 +64,11 @@
                 <div class="col">
                     <div class="mb-5">
                         <label for="distance" class="form-label fw-bold ">Odległość (m):</label><br>
-                        <label for="customRange2" class="form-label fw-bold">od 1 do 500</label>
-                        <input type="range" class="form-range" min="1" max="500" id="distanceSlider" >
-                        <input type="number" id="distanceNumber" class="form-control" placeholder="Podaj odległosć">
+                        <label for="customRange2" class="form-label fw-bold">od 1 do 1500</label>
+                        <input type="range" class="form-range" min="1" max="1500" id="distanceSlider" >
+                        <input type="number" id="distanceNumber" class="form-control" placeholder="Podaj odległosć"><br>
+                        <label for="distance" class="form-label fw-bold ">LUB</label><br>
+                        <button class="btn btn-outline-secondary" type="button" onclick="openModal('wybierzRozmiarMapy')">WYBIERZ MAPĘ</button>
                     </div>
                 </div>
                 <div class="col">
@@ -1520,7 +1522,297 @@
                       </div>
                   </div>
               </div>
+              <!--Modal ustalenia wielkości map-->
+              <div class="modal fade" id="wybierzRozmiarMapy" tabindex="-1" aria-labelledby="wybierzRozmiarMapyLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="display-4">WYBIERZ ROZMIAR MAPY</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        <div class="modal-body">
+                          <div id="karuzelaRozmiarow" class="carousel slide">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="images/Mapy/wizualizacje map/mapa1.jpg" class="d-block w-100" alt="mapy1000x1000">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>MAPY O WYMIARACH</h5>
+                                  <p>1000m x 1000m</p>
+                                  <button class="btn btn-success" type="button" onclick="openModal('mapy1000')">WYBIERZ MAPĘ</button>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/Mapy/wizualizacje map/mapa2.jpg" class="d-block w-100" alt="mapy800x800">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>MAPY O WYMIARACH</h5>
+                                  <p>800m x 800m</p>
+                                  <button class="btn btn-success" type="button" onclick="openModal('mapy800')">WYBIERZ MAPĘ</button>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/Mapy/wizualizacje map/mapa3.jpg" class="d-block w-100" alt="mapy700x700">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>MAPY O WYMIARACH</h5>
+                                  <p>700m x 700m</p>
+                                  <button class="btn btn-success" type="button" onclick="openModal('mapy700')">WYBIERZ MAPĘ</button>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/Mapy/wizualizacje map/mapa4.jpg" class="d-block w-100" alt="mapy600x600">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>MAPY O WYMIARACH</h5>
+                                  <p>600m x 600m</p>
+                                  <button class="btn btn-success" type="button" onclick="openModal('mapy600')">WYBIERZ MAPĘ</button>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#karuzelaRozmiarow" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>   
+                        </div>
+                       </div>
+                   </div>
+                </div>
+              </div>
+            <!--Modal wyboru mapy 1000x1000-->
+            <div class="modal fade" id="mapy1000" tabindex="-1" aria-labelledby="mapy1000Label" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <div class="display-4">WYBIERZ MAPE</div>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div id="karuzelaMap1000" class="carousel slide">
+                          <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="15" aria-label="Slide 16"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="16" aria-label="Slide 17"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="17" aria-label="Slide 18"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="18" aria-label="Slide 19"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="19" aria-label="Slide 20"></button>
+                            <button type="button" data-bs-target="#karuzelaMap1000" data-bs-slide-to="20" aria-label="Slide 21"></button>
+                          </div>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="images/Mapy/1000 x1000/Abbey.jpg" class="d-block w-100" alt="Abbey">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Abbey</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('ustawOdlegloscAbbey')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Airfield.jpg" class="d-block w-100" alt="Airfield">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Airfield</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Arctic_Region.jpg" class="d-block w-100" alt="Arctic_Region">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Arctic Region</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Cliff.jpg" class="d-block w-100" alt="Cliff">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Cliff</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Desert.jpg" class="d-block w-100" alt="Desert">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Desert</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/El_Hallouf.jpg" class="d-block w-100" alt="El_Hallouf">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>El Hallouf</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Erlenberg.jpg" class="d-block w-100" alt="Erlenberg">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Erlenberg</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Fisherman's_Bay.jpg" class="d-block w-100" alt="Fisherman_'s_Bay">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Fisherman's Bay</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Fjords.jpg" class="d-block w-100" alt="Fjords">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Fjords</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Highway.jpg" class="d-block w-100" alt="Highway">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Highway</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Karelia.jpg" class="d-block w-100" alt="Karelia">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Karelia</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Live_Oaks.jpg" class="d-block w-100" alt="Live_Oaks">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Live Oaks</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Malinovka.jpg" class="d-block w-100" alt="Malinovka">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Malinovka</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Mountain_Pass.jpg" class="d-block w-100" alt="Mountain_Pass">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Mountain Pass</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Murovanka.jpg" class="d-block w-100" alt="Murovanka">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Murovanka</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Pearl River.jpg" class="d-block w-100" alt="Pearl_River">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Pearl River</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Prohorovka.jpg" class="d-block w-100" alt="Prohorovka">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Prohorovka</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Serene_Coast.jpg" class="d-block w-100" alt="Serene_Coast">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Serene Coast</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Siegfried_Line.jpg" class="d-block w-100" alt="Siegfried_Line">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Siegfried Line</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Steppes.jpg" class="d-block w-100" alt="Steppes">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Steppes</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <img src="images/Mapy/1000 x1000/Westfeld.jpg" class="d-block w-100" alt="Westfeld">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h5>Westfeld</h5>
+                                <button class="btn btn-success" type="button" onclick="openModal('')">WYBIERAM</button>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#karuzelaMap1000" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#karuzelaMap1000" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                        </div>    
+                      </div>
+                     </div>
+                  </div>
+               </div>
+             </div>
+             <!--Modale ustalania odległości dla map 1000 x 1000 -->
+             <div class="modal fade" id="ustawOdlegloscAbbey" tabindex="-1" aria-labelledby="ustawOdlegloscAbbeyLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="ustawOdlegloscAbbeyLabel">USTAL ODLEGŁOŚĆ</h5>
+                          <div id="distance" class="text-center mx-auto"></div>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body d-flex justify-content-center align-items-center">
+                          <div id="image-container">
+                              <img id="image" src="images/Mapy/1000 x1000/Abbey.jpg" alt="Map" class="img-fluid">
+                              <svg id="svg-overlay" width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+                                  <line id="line" class="line" x1="0" y1="0" x2="0" y2="0" style="display:none"></line>
+                              </svg>
+                          </div>
+                      </div>
+                      <div class="modal-footer d-flex justify-content-between">
+                          <div>
+                              <span class="legend"><span class="dot-green"></span> Czołg strzelający</span>
+                              <span class="legend"><span class="dot-red"></span> Czołg ostrzeliwany</span>
+                          </div>
+                          <p>*odległość między punktami jest przybliżona, nie uwzględnia przeszkód ani różnic wysokości</p>
+                      </div>
+                  </div>
+              </div>
           </div>
+
+          
+        </div>
+
 
 
 <script src="offcanvas.js"></script>
@@ -1530,6 +1822,7 @@
 <script src="obslugaZdarzen.js"></script>
 <script src="obslugaModala.js"></script>
 <script src="wizualizacja2d.js"></script>
+<script src="obliczanieodlegloscimapy.js"></script>
 
 </body>
 </html>

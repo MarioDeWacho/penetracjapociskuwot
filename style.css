@@ -453,3 +453,77 @@ input[type="range"], input[type="number"] {
         height: 150px;
     }
 }
+
+/* Styl dla zaznaczania odległości na mapach */
+.point {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffffff; /* Biały obrys */
+}
+
+.point.green {
+    background: radial-gradient(circle at 10% 70%, #adff9d, #56b800);
+}
+
+.point.red {
+    background: radial-gradient(circle at 10% 70%, #ff9696, #a00000);
+}
+
+.line {
+    stroke: rgb(255, 255, 255);
+    stroke-dasharray: 4;
+}
+
+#image-container {
+    position: relative;
+    max-width: 1000px;
+    max-height: 1000px;
+    width: 100%;
+}
+
+#image {
+    width: 100%;
+    height: auto;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend {
+    margin-right: 20px;
+}
+
+.legend .dot-green {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 10% 70%, #adff9d, #56b800);
+    margin-right: 5px;
+    border: 2px solid #ffffff; /* Biały obrys */
+}
+
+.legend .dot-red {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 10% 70%, #ff9696, #a00000);
+    margin-right: 5px;
+    border: 2px solid #ffffff; /* Biały obrys */
+}
+
+#distance {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: auto; /* Ustawia na środku */
+    margin-right: auto; /* Ustawia na środku */
+}
+
