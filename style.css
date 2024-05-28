@@ -34,10 +34,10 @@ body {
     background-size: cover;
     opacity: 0.1;
     filter: brightness(0.5);
-    transition: opacity 1s ease, filter 1s ease;
+    transition: opacity 1s ease, filter 1s ease, box-shadow 0.5s ease, text-shadow 0.5s ease;
     font-size: var(--font-size, 35px);
     --bs-btn-font-weight: 600;
-    --bs-btn-color: var(--bs-black);
+    --bs-btn-color: var(--bs-);
     --bs-btn-bg: var(--bd-violet-bg);
     --bs-btn-border-color: var(--bd-violet-bg);
     --bs-btn-hover-color: var(--bs-black);
@@ -47,6 +47,14 @@ body {
     --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: #88487f00;
     --bs-btn-active-border-color: #88487f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Styl dla aktywnego guzika "OGNIA" */
@@ -54,6 +62,14 @@ body {
     opacity: 1;
     filter: brightness(1);
 }
+
+/* Styl dla guzika "OGNIA" podczas najechania */
+.guzik-ognia.show:hover {
+    opacity: 1;
+    filter: brightness(1) saturate(2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 1);
+}
+
 
 /* Styl dla guzika "ŁADUJ" */
 .guzik-laduj {
@@ -86,6 +102,8 @@ body {
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.5s ease;
+    filter: brightness(1) saturate(2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 1);
 }
 
 /* Preformatowanie białych znaków */
@@ -488,6 +506,8 @@ input[type="range"], input[type="number"] {
 #image {
     width: 100%;
     height: auto;
+    border: 5px solid #063000; /* Biały obrys */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .modal-footer {
@@ -521,9 +541,8 @@ input[type="range"], input[type="number"] {
 }
 
 #distance {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: bold;
-    margin-left: auto; /* Ustawia na środku */
     margin-right: auto; /* Ustawia na środku */
 }
 

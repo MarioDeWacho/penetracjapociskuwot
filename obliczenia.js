@@ -1,6 +1,5 @@
 // Funkcje związane z obliczeniami penetracji pancerza na podstawie danych wejściowych dostarczonych przez użytkownika.
 
-
 function calculatePenetrationChance() {
     var distance = parseFloat(document.getElementById('distanceNumber').value);
     var armor = parseFloat(document.getElementById('armorNumber').value);
@@ -34,47 +33,36 @@ function calculatePenetrationChance() {
 }
 
 function performPenetrationCalculation(distance, armor, angle, penetration) {
-    const normalizationAngle = 5;
-    const normalizationFactor = 2;
-    const ricochetAngle = 70;
-    const calibersTwoRule = 2;
-    const calibersThreeRule = 3;
+    // Przeliczenie kąta z stopni na radiany
+    const angleInRadians = (angle * Math.PI) / 180;
+    // Obliczenie efektywnej grubości pancerza pod kątem
+    let effectiveArmor = armor / Math.cos(angleInRadians);
 
-    let relativeArmorThickness = armor / Math.cos((angle * Math.PI) / 180);
-
-    let effectiveArmor = relativeArmorThickness;
-    let normalizationPenetration = penetration * (1 + ((normalizationAngle - angle) / 30) * (normalizationFactor - 1));
-    let normalizedPenetration = Math.max(normalizationPenetration, penetration);
-
+    // Sprawdzenie zasad twoCaliberRule i threeCaliberRule
     let penetrationChance = 0;
 
-    if (penetration >= 3 * armor) {
-        penetrationChance = 1;
-    } else if (penetration < armor) {
+    if (penetration < armor) {
+        // Jeśli kaliber pocisku jest mniejszy niż grubość pancerza
         penetrationChance = 0;
-    } else if (angle >= ricochetAngle) {
-        let deviationAngle = Math.acos(1 / 1.4) * (180 / Math.PI);
-        angle += deviationAngle;
-
-        let twoCaliberRule = Math.max(0, 1 - Math.pow(distance / (calibersTwoRule * penetration), 2));
-        let threeCaliberRule = penetration >= 3 * armor ? 1 : Math.max(0, Math.pow((calibersThreeRule * penetration - distance) / (calibersThreeRule * penetration), 1.5));
-
-        penetrationChance = twoCaliberRule * threeCaliberRule;
+    } else if (penetration >= 3 * armor) {
+        // Jeśli kaliber pocisku jest większy lub równy 3 razy grubości pancerza
+        penetrationChance = 1;
+    } else if (penetration >= 2 * armor) {
+        // Jeśli kaliber pocisku jest większy lub równy 2 razy grubości pancerza
+        penetrationChance = penetration / (1.5 * effectiveArmor);
     } else {
-        penetrationChance = 1 - (angle / ricochetAngle);
+        // Standardowa penetracja uwzględniająca efektywną grubość pancerza
+        penetrationChance = penetration / effectiveArmor;
     }
 
-    if (penetration >= 2 * armor) {
-        normalizedPenetration = (normalizedPenetration * 1.4 * penetration) / armor;
-    }
+    // Ograniczenie szansy penetracji do zakresu od 0 do 1
+    penetrationChance = Math.max(0, Math.min(1, penetrationChance));
 
     console.log("distanceNumber:", distance);
     console.log("armorNumber:", armor);
     console.log("angleNumber:", angle);
     console.log("penetrationNumber:", penetration);
     console.log("Effective Armor:", effectiveArmor);
-    console.log("Normalization Penetration:", normalizationPenetration);
-    console.log("Normalized Penetration:", normalizedPenetration);
     console.log("Penetration Chance:", penetrationChance);
 
     return penetrationChance * 100;

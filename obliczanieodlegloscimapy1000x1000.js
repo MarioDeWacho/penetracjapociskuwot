@@ -126,6 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Inicjalizacja wszystkich modalów
-    ['ustawOdlegloscAbbey', 'ustawOdlegloscAirfield'].forEach(initializeModal);
+    ['ustawOdlegloscAbbey', 'ustawOdlegloscAirfield', 'ustawOdlegloscArcticRegion', 
+     'ustawOdlegloscCliff', 'ustawOdlegloscDesert', 'ustawOdlegloscElHallouf', 
+     'ustawOdlegloscErlenberg', 'ustawOdlegloscFishermansBay', 'ustawOdlegloscFjords', 
+     'ustawOdlegloscHighway', 'ustawOdlegloscKarelia', 'ustawOdlegloscLiveOaks', 
+     'ustawOdlegloscMalinovka', 'ustawOdlegloscMountainPass', 'ustawOdlegloscMurovanka', 
+     'ustawOdlegloscPearlRiver', 'ustawOdlegloscProhorovka', 'ustawOdlegloscSereneCoast', 
+     'ustawOdlegloscSiegfriedLine', 'ustawOdlegloscSteppes', 'ustawOdlegloscWestfeld']
+    .forEach(initializeModal);
 });
 
