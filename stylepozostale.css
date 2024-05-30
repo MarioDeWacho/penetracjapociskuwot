@@ -1,0 +1,135 @@
+/* Tło dla całego dokumentu */
+body {
+    background-image: url('images/tlo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 16px;
+}
+
+/* Preformatowanie białych znaków */
+.pre-line {
+    white-space: pre-line;
+}
+
+/* Styl dla listy historii */
+#historyList {
+    text-align: left;
+}
+
+/* Styl dla górnego paska nawigacyjnego */
+.navbar {
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla dolnego paska nawigacyjnego */
+.navbar-bottom {
+    box-shadow: 0 -5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla elementu offcanvas */
+.offcanvas {
+    box-shadow: -5 0px 15px rgb(0, 0, 0);
+}
+
+.offcanvas.offcanvas-top {
+    height: 70vh;
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+/* Styl dla kolumn */
+.col {
+    position: relative;
+}
+
+.col:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #00000023;
+}
+
+/* Zmiana kursora na pointer dla obrazka służącego jako przycisk */
+.button-image:hover, .button-icon:hover {
+    cursor: pointer;
+}
+
+/* Styl dla obrazka czołgu wybórr pancerza */
+.button-image {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
+}
+
+.button-image:hover {
+    border-color: #181b04;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Styl dla obrazka statycznego */
+.button-image-static {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border: 1px solid #0000004d;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+/* Styl dla obrazka statycznego (pocisk) */
+.button-image-static-pocisk {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.308);
+    cursor: pointer;
+}
+
+.button-image-static-pocisk:hover {
+    border: 2px solid #0000004d;
+    box-shadow: 0px 0px 5px #134400;
+}
+
+.button-image-static-pocisk.selected {
+    background-color: #134400;
+    box-shadow: 0px 0px 15px hwb(0 0% 100% / 0.774);
+}
+
+/* Styl dla ikony przycisku */
+.button-icon {
+    width: 100%;
+    height: 100%;
+    background-color: #00000000;
+    transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 1s ease;
+}
+
+.button-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Styl dla przycisku "WYBIERAM" */
+.btn-primary-wybieram {
+    background-color: #000000;
+    border: 1px solid #0000004d;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+.btn-primary-wybieram:hover {
+    background-color: #00aeff;
+    color: #000000;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+
+
+
+

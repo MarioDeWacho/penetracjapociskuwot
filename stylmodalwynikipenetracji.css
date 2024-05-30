@@ -1,0 +1,187 @@
+/* Ogólne style modala */
+.modal-penetracja .modal-content {
+    /*background-color: rgba(255, 255, 255, 0.9);  Lekko przezroczyste tło */
+    background-image: url('images/pen_res_back.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 15px; /* Zaokrąglone rogi */
+    overflow: hidden; /* Zapewnienie, że zawartość nie będzie wychodzić poza modal */
+}
+
+.penetration-result{
+    box-shadow: 0 90px 100px rgb(255, 255, 255);
+}
+
+/* Style nagłówka modala */
+.modal-penetracja .modal-header {
+    background-color: #343a40; /* Ciemne tło dla nagłówka */
+    color: #fff; /* Biały kolor tekstu */
+    border-bottom: none; /* Usunięcie dolnej krawędzi */
+    display: flex; /* Flexbox dla wyrównania */
+    justify-content: center; /* Wyśrodkowanie tekstu w nagłówku */
+    align-items: center; /* Pionowe wyrównanie elementów */
+    position: relative; /* Pozwala na pozycjonowanie przycisku zamykania */
+    box-shadow: 0 0px 10px rgb(0, 0, 0);
+}
+
+.modal-penetracja .modal-header .display-3 {
+    font-size: 3rem; /* Mniejszy rozmiar czcionki dla tytułu modala */
+    flex: 1; /* Pozwala na wyśrodkowanie tekstu */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.modal-penetracja .modal-header .btn-close {
+    position: absolute; /* Pozycjonowanie absolutne */
+    right: 0.5rem; /* Odsunięcie od prawej krawędzi */
+    top: 0.5rem;
+    border: none; /* Usunięcie domyślnej krawędzi */
+    color: #ffffff; /* Biały kolor dla przycisku zamykania */
+    font-size: 1rem; /* Zwiększenie rozmiaru czcionki przycisku zamykania */
+}
+
+/* Style ciała modala */
+.modal-penetracja .modal-body {
+    padding: 2rem; /* Wewnętrzny odstęp w ciele modala */
+}
+
+.modal-penetracja .parameter-display {
+    background-color: #343a40; /* Jasne tło dla wyświetlacza parametrów */
+    border: 1px solid #dee2e6; /* Jasna krawędź */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    padding: 1rem; /* Wewnętrzny odstęp w wyświetlaczu parametrów */
+    margin-bottom: 1rem; /* Margines poniżej wyświetlacza parametrów */
+    color: #fff;
+    box-shadow: 0px 0px 5px hwb(0 0% 100% / 0.5);
+}
+
+.modal-penetracja .parameter-item {
+    margin-bottom: 1rem; /* Margines poniżej każdego pola */
+}
+
+.modal-penetracja .parameter-item p,
+.modal-penetracja .parameter-item span {
+    margin: 0; /* Usunięcie domyślnego marginesu */
+    font-size: 1rem; /* Standardowy rozmiar czcionki */
+}
+
+.modal-penetracja .parameter-item span {
+    font-size: 1.2rem; /* Większy rozmiar czcionki dla wartości */
+    font-weight: bold; /* Pogrubiona czcionka dla wyróżnienia */
+    display: block; /* Wyświetlanie wartości jako blok */
+}
+
+.modal-penetracja #wykres {
+    width: 70% !important; /* Ustawienie szerokości na 100% kontenera */
+    height: auto !important; /* Automatyczne dostosowanie wysokości */
+    
+}
+
+.modal-penetracja .penetration-result {
+    font-size: 2rem; /* Duży rozmiar czcionki dla wyniku */
+    font-weight: bold; /* Pogrubiona czcionka dla wyróżnienia */
+    color: #000; /* Czarny kolor tekstu */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Dostosowania responsywne */
+@media (min-width: 1200px) {
+    .modal-penetracja .modal-dialog {
+        max-width: 100%; /* Szerokość dla bardzo dużych ekranów */
+        margin: 2rem auto; /* Margines wokół modala */
+    }
+
+    .modal-penetracja .parameter-display {
+        font-size: 1.5rem; /* Większy rozmiar czcionki dla dużych ekranów */
+    }
+
+    .modal-penetracja .penetration-result {
+        font-size: 2.8rem; /* Większy rozmiar czcionki dla wyniku na dużych ekranach */
+    }
+
+    #wykres {
+        width: 100% !important; /* Ustawienie szerokości na 100% kontenera */
+        height: auto !important; /* Automatyczne dostosowanie wysokości */
+    }
+}
+
+@media (max-width: 1199px) {
+    .modal-penetracja .modal-dialog {
+        max-width: 100%; /* Zmniejszenie szerokości dla ekranów średnich */
+        margin: 1.5rem; /* Margines wokół modala */
+    }
+
+    .modal-penetracja .parameter-display {
+        font-size: 1rem; /* Rozmiar czcionki dla ekranów średnich */
+    }
+
+    .modal-penetracja .penetration-result {
+        font-size: 2rem; /* Rozmiar czcionki dla wyniku na ekranach średnich */
+    }
+
+    #wykres {
+        width: 100% !important; /* Ustawienie szerokości na 100% kontenera dla ekranów średnich */
+        height: auto !important; /* Automatyczne dostosowanie wysokości */
+    }
+}
+
+@media (max-width: 991px) {
+    .modal-penetracja .modal-dialog {
+        max-width: 100%; /* Zmniejszenie szerokości dla ekranów małych */
+        margin: 1rem; /* Margines wokół modala */
+    }
+
+    .modal-penetracja .parameter-display {
+        font-size: 0.7rem; /* Rozmiar czcionki dla ekranów małych */
+    }
+
+    .modal-penetracja .penetration-result {
+        font-size: 1.7rem; /* Rozmiar czcionki dla wyniku na ekranach małych */
+    }
+
+    #wykres {
+        width: 100% !important; /* Ustawienie szerokości na 100% kontenera dla ekranów małych */
+        height: auto !important; /* Automatyczne dostosowanie wysokości */
+    }
+}
+
+@media (max-width: 767px) {
+    .modal-penetracja .modal-dialog {
+        max-width: 100%; /* Pełna szerokość dla ekranów bardzo małych */
+        margin: 1rem; /* Margines wokół modala */
+    }
+
+    .modal-penetracja .parameter-display {
+        font-size: 1.5rem; /* Mniejszy rozmiar czcionki dla ekranów bardzo małych */
+    }
+
+    .modal-penetracja .penetration-result {
+        font-size: 2rem; /* Mniejszy rozmiar czcionki dla wyniku na ekranach bardzo małych */
+    }
+
+    #wykres {
+        width: 100% !important; /* Ustawienie szerokości na 100% kontenera dla ekranów bardzo małych */
+        height: auto !important; /* Automatyczne dostosowanie wysokości */
+    }
+}
+
+@media (max-width: 575px) {
+    .modal-penetracja .modal-dialog {
+        max-width: 100%; /* Pełna szerokość dla ekranów najmniejszych */
+        margin: 0.5rem; /* Mniejszy margines wokół modala */
+    }
+
+    .modal-penetracja .parameter-display {
+        font-size: 1.5rem; /* Mniejszy rozmiar czcionki dla ekranów najmniejszych */
+    }
+
+    .modal-penetracja .penetration-result {
+        font-size: 2rem; /* Mniejszy rozmiar czcionki dla wyniku na ekranach najmniejszych */
+    }
+
+    #wykres {
+        width: 100% !important; /* Ustawienie szerokości na 100% kontenera dla ekranów najmniejszych */
+        height: auto !important; /* Automatyczne dostosowanie wysokości */
+    }
+}

@@ -1,0 +1,110 @@
+/* Styl dla guzika "OGNIA" */
+.guzik-ognia {
+    width: 230px;
+    height: 230px;
+    background-color: transparent;
+    background-image: url('images/czerwony_guzik_2.png');
+    background-size: cover;
+    opacity: 0.1;
+    filter: brightness(0.5);
+    transition: opacity 1s ease, filter 1s ease, box-shadow 0.5s ease, text-shadow 0.5s ease;
+    font-size: var(--font-size, 35px);
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: #a7499400;
+    --bs-btn-hover-border-color: #a7499400;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #88487f00;
+    --bs-btn-active-border-color: #88487f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Styl dla aktywnego guzika "OGNIA" */
+.guzik-ognia.show {
+    opacity: 1;
+    filter: brightness(1);
+}
+
+/* Styl dla guzika "OGNIA" podczas najechania */
+.guzik-ognia.show:hover {
+    opacity: 1;
+    filter: brightness(1) saturate(2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 1);
+}
+
+/* Małe urządzenia (telefony) */
+@media (max-width: 600px) {
+    .penetration-result {
+        font-size: 24px;
+    }
+
+    .guzik-ognia, .guzik-laduj {
+        width: 100px;
+        height: 100px;
+    }
+
+    #battlefield {
+        width: 100%;
+        height: auto;
+    }
+
+    .tank {
+        width: 25px;
+        height: 75px;
+    }
+}
+
+/* Średnie urządzenia (tablety) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .penetration-result {
+        font-size: 36px;
+    }
+
+    .guzik-ognia, .guzik-laduj {
+        width: 150px;
+        height: 150px;
+    }
+
+    #battlefield {
+        width: 100%;
+        height: auto;
+    }
+
+    .tank {
+        width: 40px;
+        height: 120px;
+    }
+}
+
+/* Duże urządzenia (desktopy) */
+@media (min-width: 1025px) {
+    .penetration-result {
+        font-size: 50px;
+    }
+
+    .guzik-ognia, .guzik-laduj {
+        width: 230px;
+        height: 230px;
+    }
+
+    #battlefield {
+        width: 550px;
+        height: 500px;
+    }
+
+    .tank {
+        width: 50px;
+        height: 150px;
+    }
+}

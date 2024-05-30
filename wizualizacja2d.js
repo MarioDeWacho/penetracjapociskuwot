@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Zamyka modal
         const modal = bootstrap.Modal.getInstance(document.getElementById('ustawKat'));
+        handleFieldChange(); // Wywołanie funkcji po wprowadzeniu zmian
+        highlightElement(document.getElementById('angleNumber'));
         modal.hide();
     });
 
@@ -99,4 +101,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ustawia początkową pozycję czołgu strzelającego na kąt 0 stopni
     updateTankPosition(0);
+
 });

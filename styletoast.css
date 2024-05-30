@@ -1,0 +1,24 @@
+/* Styl dla kontenera tostera */
+#toastContainer {
+    z-index: 5;
+}
+
+/* Styl dla wszystkich tosterów */
+.toast {
+    width: 500px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.toast .toast-body {
+    padding: 1rem;
+}
+
+.toast .btn-close {
+    filter: brightness(0) invert(1);
+}

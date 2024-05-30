@@ -96,75 +96,92 @@ document.addEventListener("DOMContentLoaded", function() {
         highlightElement(document.getElementById("armorNumber"));
     });
 
-let selectedPenetration = 0;
-let isPenetrationSelected = false;
+    let selectedPenetration = 0;
+    let isPenetrationSelected = false;
 
-// Obsługa kliknięcia przycisku pocisku
-document.querySelectorAll('.button-image-static-pocisk').forEach(img => {
-    img.addEventListener('click', function () {
-        selectedPenetration = this.getAttribute('data-penetration');
-        const closestOffcanvas = this.closest('.offcanvas');
-        const loadButton = closestOffcanvas.querySelector('.guzik-laduj');
-        loadButton.classList.add('show');
-        loadPenetrationValue();
-        isPenetrationSelected = true;
-        highlightSelectedButton(this);
-    });
-});
-
-// Obsługa kliknięcia przycisku ładowania
-document.querySelectorAll('.guzik-laduj').forEach(button => {
-    button.addEventListener('click', function () {
-        if (isPenetrationSelected) {
-            const offcanvasElement = this.closest('.offcanvas');
-            if (offcanvasElement) {
-                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
-                if (offcanvasInstance) {
-                    offcanvasInstance.hide();
-                }
-            }
-            const toastIds = ["FV4005", "E100", "GRILLE15", "AMX50FOCHB", "CC3", "BZ75"];
-            toastIds.forEach(function (id) {
-                if (id) {
-                    displayPenetrationToast(`toastContainer${id}`, `selectedPenetrationToast${id}`, selectedPenetration);
-                }
-            });
-        } else {
-            alert("Wybierz pocisk przed użyciem.");
-        }
-    });
-});
-
-// Funkcja do załadowania wartości penetracji
-function loadPenetrationValue() {
-    if (selectedPenetration > 0) {
-        document.getElementById('penetrationNumber').value = selectedPenetration;
-        document.getElementById('penetrationSlider').value = selectedPenetration;
-        handleFieldChange(); // Wywołanie funkcji po wprowadzeniu zmian
-        highlightElement(document.getElementById('penetrationNumber'));
-    }
-}
-
-// Funkcja do podświetlania wybranego przycisku
-function highlightSelectedButton(button) {
-    document.querySelectorAll('.button-image-static-pocisk').forEach(btn => {
-        btn.classList.remove('selected');
-    });
-    button.classList.add('selected');
-}
-
-// Funkcja do wyświetlania powiadomienia o wybranym pocisku
-function displayPenetrationToast(toastContainerId, selectedPenetrationToastId, selectedValue) {
-    const toastContainer = document.getElementById(toastContainerId);
-    const selectedPenetrationToast = document.getElementById(selectedPenetrationToastId);
-
-    if (toastContainer && selectedPenetrationToast) {
-        const toast = new bootstrap.Toast(selectedPenetrationToast, {
-            autohide: true,
-            delay: 3000
+    // Obsługa kliknięcia przycisku pocisku
+    document.querySelectorAll('.button-image-static-pocisk').forEach(img => {
+        img.addEventListener('click', function () {
+            selectedPenetration = this.getAttribute('data-penetration');
+            const closestOffcanvas = this.closest('.offcanvas');
+            const loadButton = closestOffcanvas.querySelector('.guzik-laduj');
+            loadButton.classList.add('show');
+            loadPenetrationValue();
+            isPenetrationSelected = true;
+            highlightSelectedButton(this);
         });
-        toast.show();
-        selectedPenetrationToast.querySelector('span').innerText = selectedValue;
+    });
+
+    // Obsługa kliknięcia przycisku ładowania
+    document.querySelectorAll('.guzik-laduj').forEach(button => {
+        button.addEventListener('click', function () {
+            if (isPenetrationSelected) {
+                const offcanvasElement = this.closest('.offcanvas');
+                if (offcanvasElement) {
+                    const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+                    if (offcanvasInstance) {
+                        offcanvasInstance.hide();
+                    }
+                }
+                const toastIds = ["FV4005", "E100", "GRILLE15", "AMX50FOCHB", "CC3", "BZ75"];
+                toastIds.forEach(function (id) {
+                    if (id) {
+                        displayPenetrationToast(`toastContainer${id}`, `selectedPenetrationToast${id}`, selectedPenetration);
+                    }
+                });
+            } else {
+                alert("Wybierz pocisk przed użyciem.");
+            }
+        });
+    });
+
+    // Funkcja do załadowania wartości penetracji
+    function loadPenetrationValue() {
+        if (selectedPenetration > 0) {
+            document.getElementById('penetrationNumber').value = selectedPenetration;
+            document.getElementById('penetrationSlider').value = selectedPenetration;
+            handleFieldChange(); // Wywołanie funkcji po wprowadzeniu zmian
+            highlightElement(document.getElementById('penetrationNumber'));
+        }
     }
-}
+
+    // Funkcja do podświetlania wybranego przycisku
+    function highlightSelectedButton(button) {
+        document.querySelectorAll('.button-image-static-pocisk').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        button.classList.add('selected');
+    }
+
+    // Funkcja do wyświetlania powiadomienia o wybranym pocisku
+    function displayPenetrationToast(toastContainerId, selectedPenetrationToastId, selectedValue) {
+        const toastContainer = document.getElementById(toastContainerId);
+        const selectedPenetrationToast = document.getElementById(selectedPenetrationToastId);
+
+        if (toastContainer && selectedPenetrationToast) {
+            const toast = new bootstrap.Toast(selectedPenetrationToast, {
+                autohide: true,
+                delay: 3000
+            });
+            toast.show();
+            selectedPenetrationToast.querySelector('span').innerText = selectedValue;
+        }
+    }
+
+    // Dodanie funkcji odtwarzania dźwięku po kliknięciu przycisku "OGNIA"
+    function playFireSound() {
+        const clickSound = document.getElementById('clickSoundGuzikOgnia');
+        if (clickSound) {
+            clickSound.play();
+        } else {
+            console.log('Nie znaleziono elementu audio o id clickSoundGuzikOgnia');
+        }
+    }
+
+    // Dodanie nasłuchiwania zdarzenia kliknięcia dla przycisku "OGNIA"
+    if (fireButton) {
+        fireButton.addEventListener('click', function() {
+            playFireSound();
+        });
+    }
 });

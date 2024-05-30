@@ -1,0 +1,28 @@
+/* Uniwersalne style nagłówka modala */
+.modal .modal-header {
+    background-color: #343a40; /* Ciemne tło dla nagłówka */
+    color: #fff; /* Biały kolor tekstu */
+    border-bottom: none; /* Usunięcie dolnej krawędzi */
+    display: flex; /* Flexbox dla wyrównania */
+    justify-content: center; /* Wyśrodkowanie tekstu w nagłówku */
+    align-items: center; /* Pionowe wyrównanie elementów */
+    position: relative; /* Pozwala na pozycjonowanie przycisku zamykania */
+    box-shadow: 0 0px 10px rgb(0, 0, 0); /* Dodanie cienia */
+}
+
+.modal .modal-header .modal-title, 
+.modal .modal-header .display-4 {
+    flex: 1; /* Pozwala na wyśrodkowanie tekstu */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.modal .modal-header .btn-close {
+    position: absolute; /* Pozycjonowanie absolutne */
+    right: 1rem; /* Odsunięcie od prawej krawędzi */
+    top: 1rem; /* Odsunięcie od górnej krawędzi */
+    border: none; /* Usunięcie domyślnej krawędzi */
+    color: #fff; /* Biały kolor dla przycisku zamykania */
+    font-size: 1.2rem; /* Zwiększenie rozmiaru czcionki przycisku zamykania */
+    cursor: pointer; /* Kursor wskazujący na klikalny element */
+    z-index: 1; /* Ustawienie warstwy ponad innymi elementami */
+}

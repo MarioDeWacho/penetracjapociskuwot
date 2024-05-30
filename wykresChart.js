@@ -1,6 +1,3 @@
-// Funkcje odpowiedzialne za generowanie wykresu pokazującego szanse na penetrację i odbicie na podstawie obliczeń.
-
-// Funkcja generująca wykres
 function generatePenetrationChart(penetrationChance) {
     var distance = parseFloat(document.getElementById('distanceNumber').value);
     var armor = parseFloat(document.getElementById('armorNumber').value);
@@ -11,20 +8,18 @@ function generatePenetrationChart(penetrationChance) {
         return;
     }
 
+    // Ustawienie wartości parametrów w modalu
+    document.getElementById('distanceValue').textContent = distance.toFixed(2);
+    document.getElementById('armorValue').textContent = armor.toFixed(2);
+    document.getElementById('angleValue').textContent = angle.toFixed(2);
+    document.getElementById('penetrationValue').textContent = penetration.toFixed(2);
+
     var ctx = document.getElementById('wykres').getContext('2d');
     var existingChart = Chart.getChart(ctx);
 
     if (existingChart) {
         existingChart.destroy();
     }
-
-    var penetrationGradient = ctx.createRadialGradient(220, 220, 160, 200, 200, 500);
-    penetrationGradient.addColorStop(0, 'rgba(37, 71, 8, 1)');
-    penetrationGradient.addColorStop(1, 'rgba(255, 255, 255, 1)');
-
-    var reflectionGradient = ctx.createRadialGradient(220, 220, 160, 200, 200, 500);
-    reflectionGradient.addColorStop(0, 'rgba(64, 69, 69, 1)');
-    reflectionGradient.addColorStop(1, 'rgba(255, 255, 255, 1)');
 
     var myChart = new Chart(ctx, {
         type: 'doughnut',
@@ -34,14 +29,14 @@ function generatePenetrationChart(penetrationChance) {
                 label: 'Chance',
                 data: [penetrationChance.toFixed(4), (100 - penetrationChance).toFixed(4)],
                 backgroundColor: [
-                    penetrationGradient,
-                    reflectionGradient
+                    'rgba(37, 71, 8, 1)',
+                    'rgba(64, 69, 69, 1)'
                 ],
                 borderColor: [
-                    'rgba(255, 255, 255)',
-                    'rgba(255, 255, 255)'
+                    'rgba(192, 192, 192)',
+                    'rgba(192, 192, 192)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {
@@ -52,7 +47,12 @@ function generatePenetrationChart(penetrationChance) {
                     display: false,
                 },
             },
+            animation: {
+                duration: 300,
+                easing: 'easeInOutQuad',
+                animateScale: true,
+                animateRotate: true,
+            }
         }
     });
 }
-

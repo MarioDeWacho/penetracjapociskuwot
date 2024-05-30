@@ -1,0 +1,116 @@
+:root {
+    --range-focus-background-color: #c0c0c0; /* Srebrny kolor tła dla focus */
+}
+
+/* Stylizacja końcówek suwaka dla przeglądarek obsługujących pseudo-elementy */
+input[type="range"] {
+    width: 100%; /* Pełna szerokość */
+    margin: 10px 0; /* Margines */
+}
+
+input[type="range"]:focus {
+    outline: none; /* Usunięcie obramowania po uzyskaniu focus */
+}
+
+/* Stylizacja suwaka dla WebKit (Chrome, Safari) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    margin-top: -5px; /* Dostosowanie marginesu */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+}
+
+/* Stylizacja suwaka dla Gecko (Firefox) */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #ddd; /* Domyślne tło suwaka */
+    border: 0;
+    border-radius: 1.3px;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-moz-range-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+}
+
+/* Stylizacja suwaka dla MS Edge */
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+    transition: background 0.3s ease; /* Dodanie przejścia dla tła */
+}
+
+input[type="range"]:focus::-ms-track {
+    background: var(--range-focus-background-color); /* Zmiana tła na srebrny podczas focus */
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd;
+    border: 0;
+    border-radius: 2.6px;
+}
+
+input[type="range"]::-ms-thumb {
+    border: 2px solid #555555; /* Ciemnoszary obrys */
+    height: 18px; /* Wysokość */
+    width: 18px; /* Szerokość */
+    border-radius: 50%; /* Okrągły kształt */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #275300); /* Gradient nadający wygląd kuli */
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Cień */
+    margin-top: 0;
+}
+
+/* Stylizacja podświetlenia dla inputów */
+.highlight {
+    background-color: #e4e4e4; /* Jasny kolor tła */
+    border: 1px solid #000000; /* Jasnożółta ramka */
+    transition: background-color 0.5s ease, border 0.5s ease; /* Płynne przejście */
+}
+
+/* Dodanie przejścia do elementów input */
+input[type="range"], input[type="number"] {
+    transition: background-color 0.5s ease, border 0.5s ease;
+}
